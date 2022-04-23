@@ -4,7 +4,8 @@
   1. 支持动态添加数据源
   2. 支持添加多种类型的数据源
   3. 支持在yml中配置多个数据源
-  4. 支持通过传入参数的方式动态切换数据源
+  4. 支持运行时动态添加数据源
+  5. 支持通过传入参数的方式动态切换数据源
 
 ## 基本原理
   Spring boot 在启动阶段会注入一个DataSource,使用了 `spring.datasource`下的配置,且使用了`@ConditionalOnMissingBean`注解。
