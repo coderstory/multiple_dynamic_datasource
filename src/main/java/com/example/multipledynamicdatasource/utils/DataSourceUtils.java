@@ -16,7 +16,7 @@ public class DataSourceUtils {
     private final DynamicRoutingDataSource routingDataSource;
     private final DatabaseType defaultType = DatabaseType.MYSQL;
 
-    public DataSourceUtils(DynamicRoutingDataSource routingDataSource, DataSourceProperties properties) {
+    public DataSourceUtils(DynamicRoutingDataSource routingDataSource) {
         this.routingDataSource = routingDataSource;
     }
 
@@ -28,10 +28,14 @@ public class DataSourceUtils {
         }
     }
 
+    /**
+     * 给定一个数据库的连接配置 创建一个DS并加入
+     */
     public void addDataSource(DataSourceProperties properties) {
         properties.getType().buildUrl(properties);
         addDataSource(properties.buildKey(), buildDataSource(properties));
     }
+
 
     public DataSource buildDataSource(DataSourceProperties prop) {
         DatabaseType type = prop.getType();

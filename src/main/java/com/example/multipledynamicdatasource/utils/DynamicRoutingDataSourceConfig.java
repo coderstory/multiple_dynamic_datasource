@@ -14,6 +14,10 @@ import javax.sql.DataSource;
 public class DynamicRoutingDataSourceConfig {
     private final DatabaseType defaultType = DatabaseType.MYSQL;
 
+    /**
+     * 创建动态理路由数据源
+     * @param properties  主数据源的配置
+     */
     @Bean
     public DynamicRoutingDataSource build(DataSourceProperties properties) {
         DynamicRoutingDataSource dynamicRoutingDataSource = new DynamicRoutingDataSource();

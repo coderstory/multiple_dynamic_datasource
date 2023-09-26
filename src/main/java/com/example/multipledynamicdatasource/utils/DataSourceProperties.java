@@ -22,15 +22,21 @@ import java.util.Map;
 @AllArgsConstructor
 @ConfigurationProperties(prefix = "spring.datasource")
 public class DataSourceProperties {
+    // 数据库地址  域名或者ip
     private String ip;
+    // 端口号
     private String port;
+    // 用户名
     private String username;
+    // 密码
     private String password;
     // 数据库连接字符串中的参数
     private Map<String, String> optional;
     // 数据库类型
     private DatabaseType type;
+    // 合并后的完整的连接字符串
     private String url;
+    // 数据库名
     private String dataBaseName;
 
     public String buildUrl() {
